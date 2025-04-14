@@ -8,5 +8,5 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
-  base: '/ecosolve-boller/'
+  base: '/ecosolve-boller.github.io/'
 });

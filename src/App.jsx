@@ -18,7 +18,7 @@ import ROICalculator from './components/ROICalculator';
 
 function App() {
   return (
-    <Router basename="/ecosolve-boller">
+    <Router basename="/ecosolve-boller.github.io">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
