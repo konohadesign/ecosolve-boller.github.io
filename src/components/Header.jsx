@@ -18,31 +18,31 @@ export function Header() {
   const navItems = [
     {
       label: 'Branchen',
-      href: '/ecosolve-boller.github.io/industries',
+      href: '/ecosolve-boller/industries',
       subItems: [
-        { label: 'Restaurants & Gastronomie', href: '/ecosolve-boller.github.io/industries/restaurants' },
-        { label: 'Lebensmitteleinzelhandel', href: '/ecosolve-boller.github.io/industries/retail' },
-        { label: 'Hotels & Hospitality', href: '/ecosolve-boller.github.io/industries/hotels' },
-        { label: 'Produktion & Industrie', href: '/ecosolve-boller.github.io/industries/manufacturing' },
-        { label: 'Bildungseinrichtungen', href: '/ecosolve-boller.github.io/industries/education' },
-        { label: 'Multi-Site Management', href: '/ecosolve-boller.github.io/industries/multisite' },
+        { label: 'Restaurants & Gastronomie', href: '/ecosolve-boller/industries/restaurants' },
+        { label: 'Lebensmitteleinzelhandel', href: '/ecosolve-boller/industries/retail' },
+        { label: 'Hotels & Hospitality', href: '/ecosolve-boller/industries/hotels' },
+        { label: 'Produktion & Industrie', href: '/ecosolve-boller/industries/manufacturing' },
+        { label: 'Bildungseinrichtungen', href: '/ecosolve-boller/industries/education' },
+        { label: 'Multi-Site Management', href: '/ecosolve-boller/industries/multisite' },
       ]
     },
     {
       label: 'Lösungen',
       href: '#solutions',
       subItems: [
-        { label: 'Energie Monitoring', href: '/ecosolve-boller.github.io/solutions/monitoring' },
-        { label: 'Energy Management', href: '/ecosolve-boller.github.io/solutions/management' },
+        { label: 'Energie Monitoring', href: '/ecosolve-boller/solutions/monitoring' },
+        { label: 'Energy Management', href: '/ecosolve-boller/solutions/management' },
       ]
     },
     {
       label: 'Technologie',
       href: '#technologies',
       subItems: [
-        { label: 'CUES', href: '/ecosolve-boller.github.io/technologies/cues' },
-        { label: 'Eniscope Air', href: '/ecosolve-boller.github.io/technologies/eniscope-air' },
-        { label: 'Eniscope EMS', href: '/ecosolve-boller.github.io/technologies/eniscope-ems' },
+        { label: 'CUES', href: '/ecosolve-boller/technologies/cues' },
+        { label: 'Eniscope Air', href: '/ecosolve-boller/technologies/eniscope-air' },
+        { label: 'Eniscope EMS', href: '/ecosolve-boller/technologies/eniscope-ems' },
       ]
     },
     { label: 'Über uns', href: '#about' },
@@ -70,7 +70,7 @@ export function Header() {
     }`}>
       <div className="max-w-7xl mx-auto px-6">
         <nav className="flex items-center justify-between">
-          <a href="/" className="text-xl font-bold text-[#183956] flex items-center gap-2">
+          <a href="/ecosolve-boller" className="text-xl font-bold text-[#183956] flex items-center gap-2">
             <svg className="w-8 h-8 text-green-600" viewBox="0 0 24 24" fill="none" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" 
                 d="M13 10V3L4 14h7v7l9-11h-7z" />

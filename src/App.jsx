@@ -22,7 +22,7 @@ function App() {
         <Header />
         <main className="pt-24">
           <Routes>
-            <Route path="/ecosolve-boller.github.io" element={
+            <Route path="/ecosolve-boller" element={
               <>
                 <Hero />
                 <TrustSection />
@@ -36,8 +36,8 @@ function App() {
                 <ContactCTA />
               </>
             } />
-            <Route path="/ecosolve-boller.github.io/industries" element={<Industries />} />
-            <Route path="/ecosolve-boller.github.io/industries/:id" element={<IndustryDetail />} />
+            <Route path="/ecosolve-boller/industries" element={<Industries />} />
+            <Route path="/ecosolve-boller/industries/:id" element={<IndustryDetail />} />
           </Routes>
         </main>
         <Footer />
