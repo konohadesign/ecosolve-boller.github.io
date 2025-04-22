@@ -10,6 +10,7 @@ export default defineConfig(({ command }) => ({
   ],
   base: command === 'build' ? '/ecosolve-boller/' : '/',
   build: {
-    outDir: 'dist'
+    outDir: 'dist',
+    assetsDir: 'assets'
   }
 }));
