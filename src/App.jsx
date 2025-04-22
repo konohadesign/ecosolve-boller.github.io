@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { HashRouter as Router, Routes, Route } from 'react-router-dom'
 import { Header } from "./components/Header";
 import Hero from "./components/Hero";
 import TrustSection from "./components/TrustSection";
@@ -14,18 +14,15 @@ import { FAQ } from "./components/FAQ";
 import ROICalculator from './components/ROICalculator';
 import { Industries } from './pages/Industries';
 import { IndustryDetail } from './pages/IndustryDetail';
-import { getBasePath } from './utils/paths';
 
 function App() {
-  const basePath = getBasePath();
-  
   return (
     <Router>
       <div className="font-sans text-gray-900 bg-gradient-to-b from-white via-blue-50 to-white min-h-screen w-full">
         <Header />
         <main className="pt-24">
           <Routes>
-            <Route path={`${basePath}/`} element={
+            <Route path="/" element={
               <>
                 <Hero />
                 <TrustSection />
@@ -39,8 +36,8 @@ function App() {
                 <ContactCTA />
               </>
             } />
-            <Route path={`${basePath}/industries`} element={<Industries />} />
-            <Route path={`${basePath}/industries/:id`} element={<IndustryDetail />} />
+            <Route path="/industries" element={<Industries />} />
+            <Route path="/industries/:id" element={<IndustryDetail />} />
           </Routes>
         </main>
         <Footer />

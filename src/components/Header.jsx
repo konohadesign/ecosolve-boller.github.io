@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { getBasePath } from '../utils/paths';
 
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -8,7 +7,6 @@ export function Header() {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
   const [activeDropdown, setActiveDropdown] = useState(null);
-  const basePath = getBasePath();
 
   const languages = [
     { code: 'de', label: 'DE' },
@@ -20,31 +18,31 @@ export function Header() {
   const navItems = [
     {
       label: 'Branchen',
-      href: `${basePath}/industries`,
+      href: '#/industries',
       subItems: [
-        { label: 'Restaurants & Gastronomie', href: `${basePath}/industries/restaurants` },
-        { label: 'Lebensmitteleinzelhandel', href: `${basePath}/industries/retail` },
-        { label: 'Hotels & Hospitality', href: `${basePath}/industries/hotels` },
-        { label: 'Produktion & Industrie', href: `${basePath}/industries/manufacturing` },
-        { label: 'Bildungseinrichtungen', href: `${basePath}/industries/education` },
-        { label: 'Multi-Site Management', href: `${basePath}/industries/multisite` },
+        { label: 'Restaurants & Gastronomie', href: '#/industries/restaurants' },
+        { label: 'Lebensmitteleinzelhandel', href: '#/industries/retail' },
+        { label: 'Hotels & Hospitality', href: '#/industries/hotels' },
+        { label: 'Produktion & Industrie', href: '#/industries/manufacturing' },
+        { label: 'Bildungseinrichtungen', href: '#/industries/education' },
+        { label: 'Multi-Site Management', href: '#/industries/multisite' },
       ]
     },
     {
       label: 'Lösungen',
       href: '#solutions',
       subItems: [
-        { label: 'Energie Monitoring', href: `${basePath}/solutions/monitoring` },
-        { label: 'Energy Management', href: `${basePath}/solutions/management` },
+        { label: 'Energie Monitoring', href: '#/solutions/monitoring' },
+        { label: 'Energy Management', href: '#/solutions/management' },
       ]
     },
     {
       label: 'Technologie',
       href: '#technologies',
       subItems: [
-        { label: 'CUES', href: `${basePath}/technologies/cues` },
-        { label: 'Eniscope Air', href: `${basePath}/technologies/eniscope-air` },
-        { label: 'Eniscope EMS', href: `${basePath}/technologies/eniscope-ems` },
+        { label: 'CUES', href: '#/technologies/cues' },
+        { label: 'Eniscope Air', href: '#/technologies/eniscope-air' },
+        { label: 'Eniscope EMS', href: '#/technologies/eniscope-ems' },
       ]
     },
     { label: 'Über uns', href: '#about' },
@@ -72,7 +70,7 @@ export function Header() {
     }`}>
       <div className="max-w-7xl mx-auto px-6">
         <nav className="flex items-center justify-between">
-          <a href={`${basePath}/`} className="text-xl font-bold text-[#183956] flex items-center gap-2">
+          <a href="#/" className="text-xl font-bold text-[#183956] flex items-center gap-2">
             <svg className="w-8 h-8 text-green-600" viewBox="0 0 24 24" fill="none" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" 
                 d="M13 10V3L4 14h7v7l9-11h-7z" />
