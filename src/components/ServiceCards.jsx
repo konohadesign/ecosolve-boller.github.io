@@ -1,4 +1,6 @@
-export default function ServiceCards() {
+import { Link } from 'react-router-dom';
+
+export function ServiceCards() {
     const services = [
       { 
         title: 'Restaurants & Gastronomie',
@@ -68,6 +70,14 @@ export default function ServiceCards() {
                 </div>
               </div>
             ))}
+          </div>
+          <div className="text-center mt-12">
+            <Link
+              to="/ecosolve-boller.github.io/industries"
+              className="btn-primary inline-block"
+            >
+              Entdecken Sie unsere Branchenlösungen
+            </Link>
           </div>
         </div>
       </section>
