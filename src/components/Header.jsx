@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-
-const basePath = import.meta.env.MODE === 'production' ? '/ecosolve-boller' : '';
+import { getBasePath } from '../utils/paths';
 
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -9,6 +8,7 @@ export function Header() {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
   const [activeDropdown, setActiveDropdown] = useState(null);
+  const basePath = getBasePath();
 
   const languages = [
     { code: 'de', label: 'DE' },

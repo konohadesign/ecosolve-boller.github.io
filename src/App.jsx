@@ -14,10 +14,11 @@ import { FAQ } from "./components/FAQ";
 import ROICalculator from './components/ROICalculator';
 import { Industries } from './pages/Industries';
 import { IndustryDetail } from './pages/IndustryDetail';
-
-const basePath = import.meta.env.MODE === 'production' ? '/ecosolve-boller' : '';
+import { getBasePath } from './utils/paths';
 
 function App() {
+  const basePath = getBasePath();
+  
   return (
     <Router>
       <div className="font-sans text-gray-900 bg-gradient-to-b from-white via-blue-50 to-white min-h-screen w-full">
