@@ -15,6 +15,8 @@ import ROICalculator from './components/ROICalculator';
 import { Industries } from './pages/Industries';
 import { IndustryDetail } from './pages/IndustryDetail';
 
+const basePath = import.meta.env.MODE === 'production' ? '/ecosolve-boller' : '';
+
 function App() {
   return (
     <Router>
@@ -22,7 +24,7 @@ function App() {
         <Header />
         <main className="pt-24">
           <Routes>
-            <Route path="/ecosolve-boller" element={
+            <Route path={`${basePath}/`} element={
               <>
                 <Hero />
                 <TrustSection />
@@ -36,8 +38,8 @@ function App() {
                 <ContactCTA />
               </>
             } />
-            <Route path="/ecosolve-boller/industries" element={<Industries />} />
-            <Route path="/ecosolve-boller/industries/:id" element={<IndustryDetail />} />
+            <Route path={`${basePath}/industries`} element={<Industries />} />
+            <Route path={`${basePath}/industries/:id`} element={<IndustryDetail />} />
           </Routes>
         </main>
         <Footer />

@@ -8,7 +8,7 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
-  base: '/ecosolve-boller/',
+  base: import.meta.env.MODE === 'production' ? '/ecosolve-boller/' : '/',
   build: {
     outDir: 'dist'
   }
