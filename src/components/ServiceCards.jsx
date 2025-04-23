@@ -73,7 +73,7 @@ export function ServiceCards() {
           </div>
           <div className="text-center mt-12">
             <Link
-              to="/ecosolve-boller.github.io/industries"
+              to="/industries"
               className="btn-primary inline-block"
             >
               Entdecken Sie unsere Branchenlösungen

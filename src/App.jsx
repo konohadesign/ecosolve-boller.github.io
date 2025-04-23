@@ -15,9 +15,16 @@ import ROICalculator from './components/ROICalculator';
 import { Industries } from './pages/Industries';
 import { IndustryDetail } from './pages/IndustryDetail';
 
+const router = {
+  future: {
+    v7_startTransition: true,
+    v7_relativeSplatPath: true
+  }
+};
+
 function App() {
   return (
-    <Router>
+    <Router {...router}>
       <div className="font-sans text-gray-900 bg-gradient-to-b from-white via-blue-50 to-white min-h-screen w-full">
         <Header />
         <main className="pt-24">
@@ -38,6 +45,15 @@ function App() {
             } />
             <Route path="/industries" element={<Industries />} />
             <Route path="/industries/:id" element={<IndustryDetail />} />
+            <Route path="/solutions" element={<div>Solutions Page</div>} />
+            <Route path="/solutions/monitoring" element={<div>Monitoring Page</div>} />
+            <Route path="/solutions/management" element={<div>Management Page</div>} />
+            <Route path="/technologies" element={<div>Technologies Page</div>} />
+            <Route path="/technologies/cues" element={<div>CUES Page</div>} />
+            <Route path="/technologies/eniscope-air" element={<div>Eniscope Air Page</div>} />
+            <Route path="/technologies/eniscope-ems" element={<div>Eniscope EMS Page</div>} />
+            <Route path="/about" element={<div>About Page</div>} />
+            <Route path="/contact" element={<div>Contact Page</div>} />
           </Routes>
         </main>
         <Footer />

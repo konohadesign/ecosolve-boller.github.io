@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -7,6 +7,7 @@ export function Header() {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
   const [activeDropdown, setActiveDropdown] = useState(null);
+  const location = useLocation();
 
   const languages = [
     { code: 'de', label: 'DE' },
@@ -18,35 +19,35 @@ export function Header() {
   const navItems = [
     {
       label: 'Branchen',
-      href: '#/industries',
+      href: '/industries',
       subItems: [
-        { label: 'Restaurants & Gastronomie', href: '#/industries/restaurants' },
-        { label: 'Lebensmitteleinzelhandel', href: '#/industries/retail' },
-        { label: 'Hotels & Hospitality', href: '#/industries/hotels' },
-        { label: 'Produktion & Industrie', href: '#/industries/manufacturing' },
-        { label: 'Bildungseinrichtungen', href: '#/industries/education' },
-        { label: 'Multi-Site Management', href: '#/industries/multisite' },
+        { label: 'Restaurants & Gastronomie', href: '/industries/restaurants' },
+        { label: 'Lebensmitteleinzelhandel', href: '/industries/retail' },
+        { label: 'Hotels & Hospitality', href: '/industries/hotels' },
+        { label: 'Produktion & Industrie', href: '/industries/manufacturing' },
+        { label: 'Bildungseinrichtungen', href: '/industries/education' },
+        { label: 'Multi-Site Management', href: '/industries/multisite' },
       ]
     },
     {
       label: 'Lösungen',
-      href: '#solutions',
+      href: '/solutions',
       subItems: [
-        { label: 'Energie Monitoring', href: '#/solutions/monitoring' },
-        { label: 'Energy Management', href: '#/solutions/management' },
+        { label: 'Energie Monitoring', href: '/solutions/monitoring' },
+        { label: 'Energy Management', href: '/solutions/management' },
       ]
     },
     {
       label: 'Technologie',
-      href: '#technologies',
+      href: '/technologies',
       subItems: [
-        { label: 'CUES', href: '#/technologies/cues' },
-        { label: 'Eniscope Air', href: '#/technologies/eniscope-air' },
-        { label: 'Eniscope EMS', href: '#/technologies/eniscope-ems' },
+        { label: 'CUES', href: '/technologies/cues' },
+        { label: 'Eniscope Air', href: '/technologies/eniscope-air' },
+        { label: 'Eniscope EMS', href: '/technologies/eniscope-ems' },
       ]
     },
-    { label: 'Über uns', href: '#about' },
-    { label: 'Kontakt', href: '#contact' },
+    { label: 'Über uns', href: '/about' },
+    { label: 'Kontakt', href: '/contact' },
   ];
 
   useEffect(() => {
@@ -70,21 +71,21 @@ export function Header() {
     }`}>
       <div className="max-w-7xl mx-auto px-6">
         <nav className="flex items-center justify-between">
-          <a href="#/" className="text-xl font-bold text-[#183956] flex items-center gap-2">
+          <Link to="/" className="text-xl font-bold text-[#183956] flex items-center gap-2">
             <svg className="w-8 h-8 text-green-600" viewBox="0 0 24 24" fill="none" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" 
                 d="M13 10V3L4 14h7v7l9-11h-7z" />
             </svg>
             Ecosolve
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden min-[920px]:flex items-center gap-8">
             <div className="flex gap-6">
               {navItems.map((item) => (
                 <div key={item.label} className="relative group">
-                  <a
-                    href={item.href}
+                  <Link
+                    to={item.href}
                     className="text-gray-600 hover:text-[#183956] transition-colors flex items-center gap-1"
                     onMouseEnter={() => setActiveDropdown(item.label)}
                   >
@@ -94,7 +95,7 @@ export function Header() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                       </svg>
                     )}
-                  </a>
+                  </Link>
                   {item.subItems && activeDropdown === item.label && (
                     <div 
                       className="absolute top-full left-0 w-64 bg-white shadow-lg rounded-md py-2 mt-1"
@@ -102,13 +103,13 @@ export function Header() {
                       onMouseLeave={() => setActiveDropdown(null)}
                     >
                       {item.subItems.map((subItem) => (
-                        <a
+                        <Link
                           key={subItem.label}
-                          href={subItem.href}
+                          to={subItem.href}
                           className="block px-4 py-2 text-gray-600 hover:bg-gray-50 hover:text-[#183956] transition-colors whitespace-nowrap"
                         >
                           {subItem.label}
-                        </a>
+                        </Link>
                       ))}
                     </div>
                   )}
@@ -199,13 +200,13 @@ export function Header() {
             {navItems.map((item) => (
               <div key={item.label}>
                 <div className="flex items-center justify-between">
-                  <a
-                    href={item.href}
+                  <Link
+                    to={item.href}
                     onClick={() => !item.subItems && setIsMobileMenuOpen(false)}
                     className="block py-2 text-gray-600 hover:text-[#183956] transition-colors flex-1"
                   >
                     {item.label}
-                  </a>
+                  </Link>
                   {item.subItems && (
                     <button
                       onClick={() => setActiveDropdown(activeDropdown === item.label ? null : item.label)}
@@ -220,14 +221,14 @@ export function Header() {
                 {item.subItems && activeDropdown === item.label && (
                   <div className="pl-4 space-y-2">
                     {item.subItems.map((subItem) => (
-                      <a
+                      <Link
                         key={subItem.label}
-                        href={subItem.href}
+                        to={subItem.href}
                         onClick={() => setIsMobileMenuOpen(false)}
                         className="block py-2 text-gray-500 hover:text-[#183956] transition-colors"
                       >
                         {subItem.label}
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 )}

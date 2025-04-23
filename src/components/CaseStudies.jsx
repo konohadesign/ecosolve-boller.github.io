@@ -31,7 +31,7 @@ export function CaseStudies() {
             </div>
             <div className="flex items-center gap-4">
               <img 
-                src="/ecosolve-boller.github.io/images/josh-chiodo-F0hD5KVznLQ-unsplash.jpg" 
+                src="/images/josh-chiodo-F0hD5KVznLQ-unsplash.jpg" 
                 alt="7-Eleven Store" 
                 className="h-8 w-auto"
               />
@@ -49,7 +49,7 @@ export function CaseStudies() {
           <div className="space-y-6">
             <div className="bg-white rounded-xl overflow-hidden shadow-lg">
               <img 
-                src="/ecosolve-boller.github.io/images/josh-chiodo-F0hD5KVznLQ-unsplash.jpg"
+                src="/images/josh-chiodo-F0hD5KVznLQ-unsplash.jpg"
                 alt="7-Eleven Filiale mit Energiemanagementsystem"
                 className="w-full h-64 object-cover"
               />

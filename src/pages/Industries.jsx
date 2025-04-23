@@ -69,7 +69,7 @@ export function Industries() {
           {industries.map((industry) => (
             <Link
               key={industry.id}
-              to={`/ecosolve-boller.github.io/industries/${industry.id}`}
+              to={`/industries/${industry.id}`}
               className="group bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300"
             >
               <div className="relative h-48 overflow-hidden">
